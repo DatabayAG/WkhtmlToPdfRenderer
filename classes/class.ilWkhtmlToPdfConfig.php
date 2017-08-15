@@ -10,14 +10,60 @@ class ilWkhtmlToPdfConfig
 	 */
 	public function __construct($config = null)
 	{
-		if($config)
+		if($config != null && ! $config instanceof ilWkhtmlToPdfConfig)
 		{
 			$this->readConfigFromJson($config);
+		}
+		else if($config instanceof ilWkhtmlToPdfConfig)
+		{
+			$this->readConfigFromObject($config);
 		}
 		else
 		{
 			$this->useDefaultConfig();
 		}
+	}
+
+	/**
+	 * @param ilWkhtmlToPdfConfig $config
+	 */
+	protected function readConfigFromObject($config)
+	{
+		$this->setZoom($config->getZoom());
+		$this->setEnabledForms($config->getEnabledForms());
+		$this->setExternalLinks($config->getExternalLinks());
+		$this->setUserStylesheet($config->getUserStylesheet());
+		$this->setLowQuality($config->getLowQuality());
+		$this->setGreyscale($config->getGreyscale());
+		$this->setOrientation($config->getOrientation());
+		$this->setPageSize($config->getPageSize());
+		$this->setMarginLeft($config->getMarginLeft());
+		$this->setMarginRight($config->getMarginRight());
+		$this->setFooterHtmlSpacing($config->getFooterHtmlSpacing());
+		$this->setFooterHtml($config->getFooterHtml());
+		$this->setFooterTextLine($config->isFooterTextLine());
+		$this->setFooterTextCenter($config->getFooterTextCenter());
+		$this->setFooterTextSpacing($config->getFooterTextSpacing());
+		$this->setFooterTextRight($config->getFooterTextRight());
+		$this->setFooterTextLeft($config->getFooterTextLeft());
+		$this->setFooterType($config->getFooterType());
+
+		$this->setFooterHtmlSpacing($config->getFooterHtmlSpacing());
+		$this->setFooterHtmlLine($config->isFooterHtmlLine());
+		$this->setHeaderTextLine($config->isHeaderTextLine());
+		$this->setHeaderTextSpacing($config->getHeaderTextSpacing());
+		$this->setHeaderTextRight($config->getHeaderTextRight());
+		$this->setHeaderTextCenter($config->getHeaderTextCenter());
+		$this->setHeaderTextLeft($config->getHeaderTextLeft());
+		$this->setHeaderType($config->getHeaderType());
+		$this->setRadioButtonCheckedSvg($config->getRadioButtonCheckedSvg());
+		$this->setRadioButtonSvg($config->getRadioButtonSvg());
+		$this->setCheckboxCheckedSvg($config->getCheckboxCheckedSvg());
+		$this->setCheckboxSvg($config->getCheckboxSvg());
+		$this->setJavascriptDelay($config->getJavascriptDelay());
+		$this->setPrintMediaType($config->getPrintMediaType());
+		$this->setMarginTop($config->getMarginTop());
+		$this->setMarginBottom($config->getMarginBottom());
 	}
 
 	/**
