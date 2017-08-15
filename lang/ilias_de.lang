@@ -43,3 +43,4 @@ greyscale_info#:#PDF wird in Graustufen erzeugt
 print_media_info#:#Es wird der "print" media-type genutzt anstatt "screen"
 javascript_delay_info#:#Zeit in Millisekunden, welche gewartet wird bis das Javascript beendet ist.
 margin_info#:#Rand in mm z.B. 10mm
+page_settings#:#Seiteneinstellungen

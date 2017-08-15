@@ -43,3 +43,4 @@ greyscale_info#:#PDF will be generated in grayscale
 print_media_info#:#Use print media-type instead of screen
 javascript_delay_info#:#Wait some milliseconds for javascript finish
 margin_info#:#Margin in mm e.g. 10mm
+page_settings#:#Page Settings
