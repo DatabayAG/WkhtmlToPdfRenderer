@@ -36,3 +36,10 @@ html#:#Html
 footer_html#:#Html
 print_media_type#:#Use print media type instead of screen
 javascript_delay#:#Javascript delay
+external_links_info#:#Make links to remote web pages
+enable_forms_info#:#Turn HTML form fields into pdf form fields
+low_quality_info#:#Generates lower quality pdf/ps. Useful to shrink the result document space
+greyscale_info#:#PDF will be generated in grayscale
+print_media_info#:#Use print media-type instead of screen
+javascript_delay_info#:#Wait some milliseconds for javascript finish
+margin_info#:#Margin in mm e.g. 10mm

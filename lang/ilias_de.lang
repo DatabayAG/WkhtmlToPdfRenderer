@@ -36,3 +36,10 @@ html#:#Html
 footer_html#:#Html
 print_media_type#:#Benutze Druck Media Type anstatt Bildschirm
 javascript_delay#:#Javascript Wartezeit
+external_links_info#:#Erzeugt links zu externen Webseiten
+enable_forms_info#:#Wandelt HTML Formulare in PDF Formulare um
+low_quality_info#:#Erzeugt PDF mit reduzierter Qualität, wodurch diese eine kleinere Dateigröße bekommen.
+greyscale_info#:#PDF wird in Graustufen erzeugt
+print_media_info#:#Es wird der "print" media-type genutzt anstatt "screen"
+javascript_delay_info#:#Zeit in Millisekunden, welche gewartet wird bis das Javascript beendet ist.
+margin_info#:#Rand in mm z.B. 10mm

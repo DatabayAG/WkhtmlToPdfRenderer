@@ -227,6 +227,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildEnableFormsForm()
 	{
 		$enable_forms = new ilCheckboxInputGUI($this->translate('enable_forms'), 'enable_forms');
+		$enable_forms->setInfo($this->translate('enable_forms_info'));
 		return $enable_forms;
 	}
 
@@ -236,6 +237,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildExternalLinksForm()
 	{
 		$external_links = new ilCheckboxInputGUI($this->translate('external_links'), 'external_links');
+		$external_links->setInfo($this->translate('external_links_info'));
 		return $external_links;
 	}
 
@@ -254,6 +256,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildLowQualityForm()
 	{
 		$low_quality = new ilCheckboxInputGUI($this->translate('low_quality'), 'low_quality');
+		$low_quality->setInfo($this->translate('low_quality_info'));
 		return $low_quality;
 	}
 
@@ -263,6 +266,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildGreyScaleForm()
 	{
 		$grey_scale = new ilCheckboxInputGUI($this->translate('greyscale'), 'greyscale');
+		$grey_scale->setInfo($this->translate('greyscale_info'));
 		return $grey_scale;
 	}
 
@@ -272,6 +276,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildPrintMediaTypeForm()
 	{
 		$print_media = new ilCheckboxInputGUI($this->translate('print_media_type'), 'print_media_type');
+		$print_media->setInfo($this->translate('print_media_info'));
 		return $print_media;
 	}
 
@@ -281,6 +286,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildJavascriptDelayForm()
 	{
 		$javascript_delay = new ilTextInputGUI($this->translate('javascript_delay'), 'javascript_delay');
+		$javascript_delay->setInfo($this->translate('javascript_delay_info'));
 		return $javascript_delay;
 	}
 
@@ -375,6 +381,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildMarginLeftForm()
 	{
 		$margin_left = new ilTextInputGUI($this->translate('margin_left'), 'margin_left');
+		$margin_left->setInfo($this->translate('margin_info'));
 		return $margin_left;
 	}
 
@@ -384,6 +391,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildMarginRightForm()
 	{
 		$margin_right = new ilTextInputGUI($this->translate('margin_right'), 'margin_right');
+		$margin_right->setInfo($this->translate('margin_info'));
 		return $margin_right;
 	}
 
@@ -393,6 +401,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildMarginTopForm()
 	{
 		$margin_top = new ilTextInputGUI($this->translate('margin_top'), 'margin_top');
+		$margin_top->setInfo($this->translate('margin_info'));
 		return $margin_top;
 	}
 
@@ -402,6 +411,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function buildMarginBottomForm()
 	{
 		$margin_bottom = new ilTextInputGUI($this->translate('margin_bottom'), 'margin_bottom');
+		$margin_bottom->setInfo($this->translate('margin_info'));
 		return $margin_bottom;
 	}
 
