@@ -97,8 +97,6 @@ class ilWkhtmlToPdfConfigFormGUI
 
 	/**
 	 * @param ilPropertyFormGUI $form
-	 * @param                   $service
-	 * @param                   $purpose
 	 * @return array
 	 */
 	public function getConfigFromForm(\ilPropertyFormGUI $form)
