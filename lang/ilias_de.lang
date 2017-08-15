@@ -1,0 +1,38 @@
+webkit#:#wkhtmltopdf
+path#:#Pfad zum Programm
+wkhtml_config#:#Konfiguration für WKHTML
+zoom#:#Vergrößerungsfaktor
+external_links#:#Externe Links
+enable_forms#:#Formulare aktivieren
+user_stylesheet#:#Benutzer Stylesheet
+low_quality#:#Niedrige Qualität
+greyscale#:#Graustufen
+output_options#:#Ausgabe Optionen
+margin_left#:#Rand Links
+margin_right#:#Rand Rechts
+margin_top#:#Rand Oben
+margin_bottom#:#Rand Unten
+header_type#:#Kopfzeile
+text#:#Text
+header_text_left#:#Text Links
+header_text_center#:#Text Mitte
+header_text_right#:#Text Rechts
+footer_type#:#Fußzeile
+footer_text_left#:#Text Links
+footer_text_center#:#Text Mitte
+footer_text_right#:#Text Rechts
+spacing#:#Abstand
+header_line#:#Trennlinie
+footer_line#:#Trennlinie
+checkbox_svg#:#Pfad zum Checkbox SVG
+checkbox_checked_svg#:#Pfad zum ausgewähltem Checkbox SVG
+radio_button_svg#:#Pfad zum Radiobutton SVG
+radio_button_checked_svg#:#Pfad zum ausgewähltem Radiobutton SVG
+config#:#Config
+orientation#:#Orientatierung
+page_size#:#Seitengröße
+none#:#Keine
+html#:#Html
+footer_html#:#Html
+print_media_type#:#Benutze Druck Media Type anstatt Bildschirm
+javascript_delay#:#Javascript Wartezeit
