@@ -232,11 +232,14 @@ class ilWkhtmlToPdfConfig
 	 * @var string
 	 */
 	protected $radio_button_checked_svg;
-	
+
+	/**
+	 * @var string
+	 */
 	protected $path;
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getPath()
 	{
@@ -244,7 +247,7 @@ class ilWkhtmlToPdfConfig
 	}
 
 	/**
-	 * @param mixed $path
+	 * @param string $path
 	 */
 	public function setPath($path)
 	{
@@ -972,7 +975,10 @@ class ilWkhtmlToPdfConfig
 
 	protected function getZoomArgument()
 	{
-		$this->config[] = 'zoom ' . $this->getZoom();
+		if($this->getZoom() != '')
+		{
+			$this->config[] = 'zoom ' . $this->getZoom();
+		}
 	}
 
 	protected function getExternalLinksArgument()
@@ -1006,6 +1012,7 @@ class ilWkhtmlToPdfConfig
 			$this->config[] = 'user-style-sheet "' . $stylesheet . '"';
 		}
 	}
+
 	protected function getGreyscaleArgument()
 	{
 		if($this->getGreyscale())
@@ -1013,6 +1020,7 @@ class ilWkhtmlToPdfConfig
 			$this->config[] = 'grayscale';
 		}
 	}
+
 	protected function getLowQualityArgument()
 	{
 		if($this->getLowQuality() == 1 || $this->getLowQuality() == true)
@@ -1020,6 +1028,7 @@ class ilWkhtmlToPdfConfig
 			$this->config[] = 'lowquality';
 		}
 	}
+
 	protected function getOrientationArgument()
 	{
 		$orientation = $this->getOrientation();
@@ -1044,15 +1053,17 @@ class ilWkhtmlToPdfConfig
 
 	protected function getPageSizeArgument()
 	{
-		$this->config[] = 'page-size ' . $this->getPageSize();
+		if($this->getPageSize() != '')
+		{
+			$this->config[] = 'page-size ' . $this->getPageSize();
+		}
 	}
 
 	protected function getJavascriptDelayArgument()
 	{
-		$javascript_delay = $this->getJavascriptDelay();
-		if($javascript_delay != '')
+		if($this->getJavascriptDelay() != '')
 		{
-			$this->config[]   = 'javascript-delay ' . $javascript_delay;
+			$this->config[]   = 'javascript-delay ' . $this->getJavascriptDelay();
 		}
 	}
 
