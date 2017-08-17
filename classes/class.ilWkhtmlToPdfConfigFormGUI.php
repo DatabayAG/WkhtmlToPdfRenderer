@@ -13,7 +13,7 @@ class ilWkhtmlToPdfConfigFormGUI
 	public function __construct()
 	{
 		global $DIC;
-		$this->lng = $DIC['lng'];
+		$this->setLanguage($DIC['lng']);
 	}
 
 	/**
@@ -23,6 +23,14 @@ class ilWkhtmlToPdfConfigFormGUI
 	protected function translate($txt)
 	{
 		return $this->lng->txt('pdfg_renderer_wkhtp_' . $txt);
+	}
+
+	/**
+	 * @param $lng
+	 */
+	protected function setLanguage($lng)
+	{
+		$this->lng = $lng;
 	}
 
 	/**
