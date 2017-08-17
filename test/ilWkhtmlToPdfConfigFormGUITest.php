@@ -61,6 +61,14 @@ class ilWkhtmlToPdfConfigFormGUITest  extends PHPUnit_Framework_TestCase
 		$this->assertSame('margin_bottom', $transformer->invokeArgs($this->form, array())->getPostVar());
 	}
 
+	public function testBuildJavascriptDelayForm()
+	{
+		$transformer = self::getMethod('buildJavascriptDelayForm');
+		$this->assertInstanceOf('ilTextInputGUI', $transformer->invokeArgs($this->form, array()));
+		$this->assertSame('pdfg_renderer_wkhtp_javascript_delay', $transformer->invokeArgs($this->form, array())->getTitle());
+		$this->assertSame('javascript_delay', $transformer->invokeArgs($this->form, array())->getPostVar());
+	}
+
 	public function testBuildMarginTopForm()
 	{
 		$transformer = self::getMethod('buildMarginTopForm');
@@ -82,14 +90,6 @@ class ilWkhtmlToPdfConfigFormGUITest  extends PHPUnit_Framework_TestCase
 		$this->assertInstanceOf('ilTextInputGUI', $transformer->invokeArgs($this->form, array()));
 		$this->assertSame('pdfg_renderer_wkhtp_margin_left', $transformer->invokeArgs($this->form, array())->getTitle());
 		$this->assertSame('margin_left', $transformer->invokeArgs($this->form, array())->getPostVar());
-	}
-
-	public function testBuildJavascriptDelayForm()
-	{
-		$transformer = self::getMethod('buildMarginBottomForm');
-		$this->assertInstanceOf('ilTextInputGUI', $transformer->invokeArgs($this->form, array()));
-		$this->assertSame('pdfg_renderer_wkhtp_margin_bottom', $transformer->invokeArgs($this->form, array())->getTitle());
-		$this->assertSame('margin_bottom', $transformer->invokeArgs($this->form, array())->getPostVar());
 	}
 
 	public function testBuildPageSizesForm()

@@ -72,41 +72,54 @@ class ilWkhtmlToPdfConfig
 	 */
 	protected function readConfigFromArray($config)
 	{
-		$this->setZoom($config['zoom']);
-		$this->setEnabledForms($config['enable_forms']);
-		$this->setExternalLinks($config['external_links']);
-		$this->setUserStylesheet($config['user_stylesheet']);
-		$this->setLowQuality($config['low_quality']);
-		$this->setGreyscale($config['greyscale']);
-		$this->setOrientation($config['orientation']);
-		$this->setPageSize($config['page_size']);
-		$this->setMarginLeft($config['margin_left']);
-		$this->setMarginRight($config['margin_right']);
-		$this->setFooterHtmlSpacing($config['footer_html_spacing']);
-		$this->setFooterHtml($config['footer_html']);
-		$this->setFooterTextLine($config['footer_text_line']);
-		$this->setFooterTextCenter($config['footer_text_center']);
-		$this->setFooterTextSpacing($config['footer_text_spacing']);
-		$this->setFooterTextRight($config['footer_text_right']);
-		$this->setFooterTextLeft($config['footer_text_left']);
-		$this->setFooterType($config['footer_select']);
+		$this->setKeyIfExists('setZoom',					'zoom', $config);
+		$this->setKeyIfExists('setEnabledForms',			'enable_forms', $config);
+		$this->setKeyIfExists('setExternalLinks',			'external_links', $config);
+		$this->setKeyIfExists('setUserStylesheet',			'user_stylesheet', $config);
+		$this->setKeyIfExists('setLowQuality',				'low_quality', $config);
+		$this->setKeyIfExists('setGreyscale',				'greyscale', $config);
+		$this->setKeyIfExists('setOrientation',				'orientation', $config);
+		$this->setKeyIfExists('setPageSize',				'page_size', $config);
+		$this->setKeyIfExists('setMarginLeft',				'margin_left', $config);
+		$this->setKeyIfExists('setMarginRight',				'margin_right', $config);
+		$this->setKeyIfExists('setFooterHtmlSpacing',		'footer_html_spacing', $config);
+		$this->setKeyIfExists('setFooterHtml',				'footer_html', $config);
+		$this->setKeyIfExists('setFooterTextLine',			'footer_text_line', $config);
+		$this->setKeyIfExists('setFooterTextCenter',		'footer_text_center', $config);
+		$this->setKeyIfExists('setFooterTextCenter',		'footer_text_center', $config);
+		$this->setKeyIfExists('setFooterTextSpacing',		'footer_text_spacing', $config);
+		$this->setKeyIfExists('setFooterTextRight',			'footer_text_right', $config);
+		$this->setKeyIfExists('setFooterTextLeft',			'footer_text_left', $config);
+		$this->setKeyIfExists('setFooterType',				'footer_select', $config);
+		$this->setKeyIfExists('setHeaderHtmlSpacing',		'head_html_spacing', $config);
+		$this->setKeyIfExists('setHeaderHtmlLine',			'head_html_line', $config);
+		$this->setKeyIfExists('setHeaderTextLine',			'head_text_line', $config);
+		$this->setKeyIfExists('setHeaderTextSpacing',		'head_text_spacing', $config);
+		$this->setKeyIfExists('setHeaderTextRight',			'head_text_right', $config);
+		$this->setKeyIfExists('setHeaderTextCenter',		'head_text_center', $config);
+		$this->setKeyIfExists('setHeaderTextLeft',			'head_text_left', $config);
+		$this->setKeyIfExists('setHeaderType',				'header_select', $config);
+		$this->setKeyIfExists('setRadioButtonCheckedSvg',	'radio_button_checked_svg', $config);
+		$this->setKeyIfExists('setRadioButtonSvg',			'radio_button_svg', $config);
+		$this->setKeyIfExists('setCheckboxCheckedSvg',		'checkbox_checked_svg', $config);
+		$this->setKeyIfExists('setCheckboxSvg',				'checkbox_svg', $config);
+		$this->setKeyIfExists('setJavascriptDelay',			'javascript_delay', $config);
+		$this->setKeyIfExists('setPrintMediaType',			'print_media_type', $config);
+		$this->setKeyIfExists('setMarginTop',				'margin_top', $config);
+		$this->setKeyIfExists('setMarginBottom',			'margin_bottom', $config);
+	}
 
-		$this->setFooterHtmlSpacing($config['head_html_spacing']);
-		$this->setFooterHtmlLine($config['head_html_line']);
-		$this->setHeaderTextLine($config['head_text_line']);
-		$this->setHeaderTextSpacing($config['head_text_spacing']);
-		$this->setHeaderTextRight($config['head_text_right']);
-		$this->setHeaderTextCenter($config['head_text_center']);
-		$this->setHeaderTextLeft($config['head_text_left']);
-		$this->setHeaderType($config['header_select']);
-		$this->setRadioButtonCheckedSvg($config['radio_button_checked_svg']);
-		$this->setRadioButtonSvg($config['radio_button_svg']);
-		$this->setCheckboxCheckedSvg($config['checkbox_checked_svg']);
-		$this->setCheckboxSvg($config['checkbox_svg']);
-		$this->setJavascriptDelay($config['javascript_delay']);
-		$this->setPrintMediaType($config['print_media_type']);
-		$this->setMarginTop($config['margin_top']);
-		$this->setMarginBottom($config['margin_bottom']);
+	/**
+	 * @param $function
+	 * @param $key
+	 * @param $config
+	 */
+	protected function setKeyIfExists($function, $key, $config)
+	{
+		if(array_key_exists($key, $config))
+		{
+			$this->{$function}($config[$key]);
+		}
 	}
 
 	protected function useDefaultConfig()
