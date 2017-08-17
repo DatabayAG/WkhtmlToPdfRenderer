@@ -1,4 +1,5 @@
 <?php
+require_once './Services/PDFGeneration/classes/class.ilPDFGenerationConstants.php';
 
 class ilWkhtmlToPdfConfig
 {
@@ -12,7 +13,7 @@ class ilWkhtmlToPdfConfig
 	{
 		if($config != null && ! $config instanceof ilWkhtmlToPdfConfig)
 		{
-			$this->readConfigFromJson($config);
+			$this->readConfigFromArray($config);
 		}
 		else if($config instanceof ilWkhtmlToPdfConfig)
 		{
@@ -69,7 +70,7 @@ class ilWkhtmlToPdfConfig
 	/**
 	 * @param $config
 	 */
-	protected function readConfigFromJson($config)
+	protected function readConfigFromArray($config)
 	{
 		$this->setZoom($config['zoom']);
 		$this->setEnabledForms($config['enable_forms']);
@@ -1135,8 +1136,8 @@ class ilWkhtmlToPdfConfig
 
 	protected function getFooterArgument()
 	{
-		$header_value  = $this->getFooterType();
-		if($header_value == ilPDFGenerationConstants::HEADER_TEXT)
+		$footer_value  = $this->getFooterType();
+		if($footer_value == ilPDFGenerationConstants::FOOTER_TEXT)
 		{
 			$this->config[] = 'footer-left "'	.	$this->getFooterTextLeft()		. '"';
 			$this->config[] = 'footer-center "'	.	$this->getFooterTextCenter()	. '"';
@@ -1151,7 +1152,7 @@ class ilWkhtmlToPdfConfig
 				$this->config[] = 'footer-line';
 			}
 		}
-		else if($header_value == ilPDFGenerationConstants::HEADER_HTML)
+		else if($footer_value == ilPDFGenerationConstants::FOOTER_HTML)
 		{
 			$this->config[] = 'footer-html "'	.	$this->getFooterHtml() . '"';
 

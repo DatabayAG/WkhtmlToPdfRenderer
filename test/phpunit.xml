@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+	<testsuite name="WkhtmlToPdf Testsuite">
+		<file>./ilWkhtmlToPdfTestSuite.php</file>
+	</testsuite>
+	<php>
+		<const name="PHPUNIT_WkhtmlToPdf_TEST_SUITE" value="true"/>
+	</php>
+	<filter>
+		<whitelist processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">../classes</directory>
+		</whitelist>
+	</filter>
+</phpunit>
