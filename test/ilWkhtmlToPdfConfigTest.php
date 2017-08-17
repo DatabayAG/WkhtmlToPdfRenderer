@@ -288,40 +288,71 @@ class ilWkhtmlToPdfConfigTest  extends PHPUnit_Framework_TestCase
 			"zoom" => "0.4", 
 			"enable_forms" => "true",
 			"external_links" => "true",
-			"user_stylesheet" => "",
-			"low_quality" => "",
-			"greyscale" => "",
-			"orientation" => "",
-			"page_size" => "",
-			"margin_left" => "",
-			"margin_right" => "",
-			"footer_html_spacing" => "",
-			"footer_html" => "",
-			"footer_text_line" => "",
-			"footer_text_center" => "",
-			"footer_text_spacing" => "",
-			"footer_text_right" => "",
-			"footer_text_left" => "",
-			"footer_select" => "",
-			"head_html_spacing" => "",
-			"head_html_line" => "",
-			"head_text_line" => "",
-			"head_text_spacing" => "",
-			"head_text_right" => "",
-			"head_text_center" => "",
-			"head_text_left" => "",
-			"header_select" => "",
-			"radio_button_checked_svg" => "",
-			"radio_button_svg" => "",
-			"checkbox_checked_svg" => "",
-			"checkbox_svg" => "",
-			"javascript_delay" => "",
-			"print_media_type" => "",
-			"margin_top" => "",
-			"margin_bottom" => "",
+			"user_stylesheet" => "my_style_sheet.css",
+			"low_quality" => "0",
+			"greyscale" => "0",
+			"orientation" => "Landscape",
+			"page_size" => "A1",
+			"margin_left" => "1cm",
+			"margin_right" => "2cm",
+			"footer_html_spacing" => "3cm",
+			"footer_html" => "<div>my html </div>",
+			"footer_text_line" => "1",
+			"footer_text_center" => "my footer text",
+			"footer_text_spacing" => "1",
+			"footer_text_right" => "right text",
+			"footer_text_left" => "left text",
+			"footer_select" => "0",
+			"head_html_spacing" => "1",
+			"head_html_line" => "0",
+			"head_text_line" => "1",
+			"head_text_spacing" => "1",
+			"head_text_right" => "head text right",
+			"head_text_center" => "head text center",
+			"head_text_left" => "head text left",
+			"header_select" => "1",
+			"radio_button_checked_svg" => "r_c.svg",
+			"radio_button_svg" => "r.svg",
+			"checkbox_checked_svg" => "c_c.svg",
+			"checkbox_svg" => "c.svg",
+			"javascript_delay" => "231",
+			"print_media_type" => "1",
+			"margin_top" => "5cm",
+			"margin_bottom" => "6cm",
 		);
 		$cfg = new ilWkhtmlToPdfConfig($json);
+		$this->assertSame("1", $cfg->getHeaderHtmlSpacing());
+		$this->assertSame("0", $cfg->isHeaderHtmlLine());
+		$this->assertSame("1", $cfg->isHeaderTextLine());
+		$this->assertSame("1", $cfg->getHeaderTextSpacing());
+		$this->assertSame("head text right", $cfg->getHeaderTextRight());
+		$this->assertSame("head text center", $cfg->getHeaderTextCenter());
+		$this->assertSame("head text left", $cfg->getHeaderTextLeft());
+		$this->assertSame("1", $cfg->getHeaderType());
+		$this->assertSame("r_c.svg", $cfg->getRadioButtonCheckedSvg());
+		$this->assertSame("r.svg", $cfg->getRadioButtonSvg());
+		$this->assertSame("c_c.svg", $cfg->getCheckboxCheckedSvg());
+		$this->assertSame("c.svg", $cfg->getCheckboxSvg());
+		$this->assertSame("231", $cfg->getJavascriptDelay());
+		$this->assertSame("1", $cfg->getPrintMediaType());
+		$this->assertSame("5cm", $cfg->getMarginTop());
+		$this->assertSame("6cm", $cfg->getMarginBottom());
 		$this->assertSame("0.4", $cfg->getZoom());
 		$this->assertSame('true', $cfg->getExternalLinks());
+		$this->assertSame('my_style_sheet.css', $cfg->getUserStylesheet());
+		$this->assertSame('0', $cfg->getLowQuality());
+		$this->assertSame('0', $cfg->getGreyscale());
+		$this->assertSame('Landscape', $cfg->getOrientation());
+		$this->assertSame('A1', $cfg->getPageSize());
+		$this->assertSame('1cm', $cfg->getMarginLeft());
+		$this->assertSame('2cm', $cfg->getMarginRight());
+		$this->assertSame('3cm', $cfg->getFooterHtmlSpacing());
+		$this->assertSame('<div>my html </div>', $cfg->getFooterHtml());
+		$this->assertSame('my footer text', $cfg->getFooterTextCenter());
+		$this->assertSame('1', $cfg->isFooterTextLine());
+		$this->assertSame('1', $cfg->getFooterTextSpacing());
+		$this->assertSame('right text', $cfg->getFooterTextRight());
+		$this->assertSame('left text', $cfg->getFooterTextLeft());
+		$this->assertSame('0', $cfg->getFooterType());
 	}
 } 
