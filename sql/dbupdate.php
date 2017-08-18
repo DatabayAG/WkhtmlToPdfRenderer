@@ -36,10 +36,10 @@ require_once './Services/PDFGeneration/classes/class.ilPDFCompInstaller.php';
  ilPDFCompInstaller::registerRenderer($renderer, $path);
 
  $service = 'Test';
- $purpose = 'UserResults'; // According to name given. Call multiple times.
+ $purpose = 'UserResult'; // According to name given. Call multiple times.
  ilPDFCompInstaller::registerRendererAvailability($renderer, $service, $purpose);
  
- $purpose = 'PrintViewOfQuestion'; // According to name given. Call multiple times.
+ $purpose = 'PrintViewOfQuestions'; // According to name given. Call multiple times.
  ilPDFCompInstaller::registerRendererAvailability($renderer, $service, $purpose);
 
 ?>

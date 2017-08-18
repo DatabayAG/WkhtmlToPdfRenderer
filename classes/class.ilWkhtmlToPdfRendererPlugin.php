@@ -14,7 +14,6 @@ class ilWkhtmlToPdfRendererPlugin extends ilPDFRendererPlugin
 	 */
 	protected $config;
 
-	
 	/**
 	 * @var string
 	 */
