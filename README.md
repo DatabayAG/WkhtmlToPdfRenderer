@@ -1,4 +1,7 @@
-# Please note:
+# Informations
+This is a PDF plugin for the Ilias PDF plugin slot since 5.3.x, which enables the possibility to use wkhtmltopdf as render.
+
+## Please note:
 Ensure you use a qt patched version of [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) if you use this on server environment.
 
 ## Installation Instructions
