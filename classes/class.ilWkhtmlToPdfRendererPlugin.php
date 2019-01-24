@@ -229,4 +229,11 @@ class ilWkhtmlToPdfRendererPlugin extends ilPDFRendererPlugin
 		return ilUtil::ilTempnam() . '.' . $file_type;
 	}
 
+	public function prepareGenerationRequest($service, $purpose)
+	{
+		ilMathJax::getInstance()
+				 ->init(ilMathJax::PURPOSE_PDF)
+				 ->setRendering(ilMathJax::RENDER_SVG_AS_XML_EMBED);
+	}
+
 }
